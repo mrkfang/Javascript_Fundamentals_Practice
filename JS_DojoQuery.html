@@ -1,0 +1,36 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title></title>
+</head>
+<body>
+  <button id="butan">I are Button</button>
+
+  <script>
+    function $Dojo(id){
+      var id_obj = document.getElementById(id)
+      id_obj.click = function(callback){
+        id_obj.addEventListener("click", function(){
+          callback()
+        });
+      }
+      id_obj.hover = function(callback, callback2){
+        id_obj.addEventListener("mouseover", function(){
+          callback()
+        });
+        id_obj.addEventListener("mouseout", function(){
+          callback2()
+        });
+      }
+      return id_obj
+    }
+
+    $Dojo("butan").click(function(){console.log('heyyyy')})
+    $Dojo("butan").hover(function(){console.log('mouse over')}, function(){console.log('mouse out!')})
+
+  </script>
+</body>
+</html>

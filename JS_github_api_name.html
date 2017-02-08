@@ -1,0 +1,30 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>JS Bin</title>
+  <script src="https://code.jquery.com/jquery-3.1.0.js"></script>
+</head>
+<body>
+  <button id="api">Get API name</button>
+  <div class="lol"></div>
+
+  <script>
+    $("#api").on("click", function(){
+      $.get("https://api.github.com/users/mrkfang", displayName)
+    })
+
+  // Notice that displayName is a function that takes in 1 parameter (this is the data that comes back from the API)
+
+  function displayName(data) {
+    console.log(data.name);
+    $(".lol").append(data.name)
+  }
+
+
+
+  </script>
+</body>
+</html>

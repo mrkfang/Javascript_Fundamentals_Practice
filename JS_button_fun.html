@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Button Fun</title>
+    <script src="https://code.jquery.com/jquery-3.1.0.js"></script>
+
+    <style>
+    .fun_button {
+      padding: 10px;
+      border-radius: 7px;
+      background-color: skyblue;
+      box-shadow: 1px 1px 1px black;
+      color: black;
+      font-size: 16px;
+    }
+    .pink {
+      background-color: pink;
+    }
+    .blue {
+      background-color: skyblue;
+    }
+    .lime {
+      background-color: lime;
+    }
+    </style>
+  </head>
+  <body>
+    <button class="fun_button">Button Fun</button>
+
+
+
+    <script>
+    var toggleClass = "blue"
+
+    $( ".fun_button" ).hover(
+      function(){
+        $(".fun_button").addClass("lime")
+      },
+      function(){
+         $(".fun_button").removeClass("lime")
+       }
+    )
+
+
+    $(".fun_button").on("click",function(){
+      if(toggleClass === "blue"){
+        $(".fun_button").removeClass("blue")
+        $(".fun_button").addClass("pink")
+        toggleClass = "pink"
+      }
+      else if(toggleClass === "pink"){
+        $(".fun_button").removeClass("pink")
+        $(".fun_button").addClass("blue")
+        toggleClass = "blue"
+      }
+
+      // }
+    })
+    </script>
+  </body>
+</html>
